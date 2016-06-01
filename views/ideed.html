@@ -1,0 +1,18 @@
+<div id="cont">
+            <ul>
+                <li class="input">
+                    <input type="text" class="item_input" placeholder="Start typing to add new note or idea">
+                </li>
+                <?php if (!empty($ideed)):?>
+                <?php foreach($ideed as $iid): ?>
+                <li>
+                    <div class="item_mark"></div>
+                    <div class="item_content">
+                        <h3><?php echo $iid['id_title']; ?></h3>
+                        <span class="item_detail">Added by <span class="item_author"><a href="" class="blink"><?php echo $iid['id_author']; ?></a></span>, <?php echo date("d-m-Y", strtotime($iid['id_date'])); ?></span>
+                    </div>
+                </li>
+                <?php endforeach; ?>
+                <?php endif;?>
+            </ul>
+        </div>
